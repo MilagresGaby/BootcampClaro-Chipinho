@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13966, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: Cenario02
+  m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.SceneTemplate.SceneTemplateAsset
+  templateScene: {fileID: 102900000, guid: ee00d21f644436c4dbcf7d43c77438e7, type: 3}
+  templateName: 
+  description: 
+  preview: {fileID: 0}
+  dependencies:
+  - dependency: {fileID: 2100000, guid: c74a19364319aed42a21e345a87f1164, type: 2}
+    instantiationMode: 0
+  - dependency: {fileID: 2100000, guid: cdbb40e11399e4a17882ada20a1b896a, type: 2}
+    instantiationMode: 0
+  - dependency: {fileID: 8900000, guid: e71fc492f440446b99875b8e1df890ba, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: c8e51dfd53a5879478fbf18ecaff4ce4, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: 8bbf11d9afa4db743b546c923983f04d, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 2100000, guid: 9897c4451a5b82f47b73d05c65febd5d, type: 2}
+    instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: 60de433b5c16fa74cb8f45f2c1ba0702, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: 432b3086cebdc438d9d33de3669fb063, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 2800000, guid: cc1333e0255889246844fa15eafe74d2, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: 57da91ef0c2a5489891995dc81537253, type: 3}
+    instantiationMode: 1
+  - dependency: {fileID: 2800000, guid: 2da14a4f34d69d046a3f343391ffc59a, type: 3}
+    instantiationMode: 0
+  templatePipeline: {fileID: 0}
+  badge: {fileID: 0}
+  addToDefaults: 0
