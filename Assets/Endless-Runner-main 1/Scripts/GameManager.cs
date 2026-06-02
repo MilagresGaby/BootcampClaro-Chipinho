@@ -37,13 +37,17 @@ public class GameManager : MonoBehaviour
     }
 
     private void Update()
+{
+    if (playerTransform != null && playerTransform.GetComponent<Movement>().enabled)
     {
-        if (playerTransform != null && playerTransform.GetComponent<Movement>().enabled)
-        {
-            pontosPorDistanciaacumulados += playerTransform.GetComponent<Movement>().currentSpeed * Time.deltaTime * 0.5f;
-            AtualizarInterface();
-        }
+        pontosPorDistanciaacumulados += playerTransform.GetComponent<Movement>().currentSpeed * Time.deltaTime * 0.5f;
+        
+        // ADICIONE ESSA LINHA ABAIXO: Perde 2f de energia por segundo correndo
+        AdicionarEnergia(-2f * Time.deltaTime); 
+
+        AtualizarInterface();
     }
+}
 
     public void AdicionarEnergia(float quantidade)
     {
