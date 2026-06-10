@@ -5448,13 +5448,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7198197026446251732, guid: 1356ee613165ab048a91e46b2497d13a, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 4472893471803721011}
   m_SourcePrefab: {fileID: 100100000, guid: 1356ee613165ab048a91e46b2497d13a, type: 3}
 --- !u!4 &167580514702049149 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3207922869744245669, guid: 1356ee613165ab048a91e46b2497d13a, type: 3}
   m_PrefabInstance: {fileID: 3375317412091176152}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5562696795206234636 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7198197026446251732, guid: 1356ee613165ab048a91e46b2497d13a, type: 3}
+  m_PrefabInstance: {fileID: 3375317412091176152}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4472893471803721011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5562696795206234636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa05c2d1ab707d41abdabe416ba0d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemColetavelAudio
+  somColeta: {fileID: 8300000, guid: 2a71d8e8ea428e0409d3df636b9f0192, type: 3}
 --- !u!1001 &3451013872854494331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5522,13 +5543,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7198197026446251732, guid: 1356ee613165ab048a91e46b2497d13a, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 716262119710628699}
   m_SourcePrefab: {fileID: 100100000, guid: 1356ee613165ab048a91e46b2497d13a, type: 3}
 --- !u!4 &243372568602146782 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3207922869744245669, guid: 1356ee613165ab048a91e46b2497d13a, type: 3}
   m_PrefabInstance: {fileID: 3451013872854494331}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5476751923966507695 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7198197026446251732, guid: 1356ee613165ab048a91e46b2497d13a, type: 3}
+  m_PrefabInstance: {fileID: 3451013872854494331}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &716262119710628699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5476751923966507695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa05c2d1ab707d41abdabe416ba0d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemColetavelAudio
+  somColeta: {fileID: 8300000, guid: 2a71d8e8ea428e0409d3df636b9f0192, type: 3}
 --- !u!1001 &4968343212548808912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5966,8 +6008,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7198197026446251732, guid: 1356ee613165ab048a91e46b2497d13a, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 5612592042902937935}
   m_SourcePrefab: {fileID: 100100000, guid: 1356ee613165ab048a91e46b2497d13a, type: 3}
+--- !u!1 &17857231400690799 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7198197026446251732, guid: 1356ee613165ab048a91e46b2497d13a, type: 3}
+  m_PrefabInstance: {fileID: 7195154616270811835}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5612592042902937935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17857231400690799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa05c2d1ab707d41abdabe416ba0d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemColetavelAudio
+  somColeta: {fileID: 8300000, guid: 2a71d8e8ea428e0409d3df636b9f0192, type: 3}
 --- !u!4 &5719157951258716446 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3207922869744245669, guid: 1356ee613165ab048a91e46b2497d13a, type: 3}
@@ -6040,8 +6103,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7198197026446251732, guid: 1356ee613165ab048a91e46b2497d13a, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 4405652953503107856}
   m_SourcePrefab: {fileID: 100100000, guid: 1356ee613165ab048a91e46b2497d13a, type: 3}
+--- !u!1 &1511476556190648259 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7198197026446251732, guid: 1356ee613165ab048a91e46b2497d13a, type: 3}
+  m_PrefabInstance: {fileID: 8583005356484530455}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4405652953503107856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511476556190648259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa05c2d1ab707d41abdabe416ba0d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemColetavelAudio
+  somColeta: {fileID: 8300000, guid: 2a71d8e8ea428e0409d3df636b9f0192, type: 3}
 --- !u!4 &6600061809174776498 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3207922869744245669, guid: 1356ee613165ab048a91e46b2497d13a, type: 3}

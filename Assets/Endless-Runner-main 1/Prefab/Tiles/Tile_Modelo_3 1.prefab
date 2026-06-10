@@ -1503,8 +1503,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5057042665173765735, guid: 0394e84a365952245bf0e3f1f4e8fa6f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7946788057569372217}
   m_SourcePrefab: {fileID: 100100000, guid: 0394e84a365952245bf0e3f1f4e8fa6f, type: 3}
+--- !u!1 &445471838904366267 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5057042665173765735, guid: 0394e84a365952245bf0e3f1f4e8fa6f, type: 3}
+  m_PrefabInstance: {fileID: 4611857285834668764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7946788057569372217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445471838904366267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa05c2d1ab707d41abdabe416ba0d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemColetavelAudio
+  somColeta: {fileID: 8300000, guid: ab297b593498a6e47ba84de770477cbe, type: 3}
 --- !u!4 &6119599786753456391 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1508059710426055643, guid: 0394e84a365952245bf0e3f1f4e8fa6f, type: 3}
@@ -1643,8 +1664,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5057042665173765735, guid: 0394e84a365952245bf0e3f1f4e8fa6f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1618710833591669467}
   m_SourcePrefab: {fileID: 100100000, guid: 0394e84a365952245bf0e3f1f4e8fa6f, type: 3}
+--- !u!1 &2251892773968240713 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5057042665173765735, guid: 0394e84a365952245bf0e3f1f4e8fa6f, type: 3}
+  m_PrefabInstance: {fileID: 6444208026781494830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1618710833591669467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251892773968240713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa05c2d1ab707d41abdabe416ba0d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemColetavelAudio
+  somColeta: {fileID: 8300000, guid: ab297b593498a6e47ba84de770477cbe, type: 3}
 --- !u!4 &5585546968052936181 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1508059710426055643, guid: 0394e84a365952245bf0e3f1f4e8fa6f, type: 3}
@@ -1713,8 +1755,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5057042665173765735, guid: 0394e84a365952245bf0e3f1f4e8fa6f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2430777068024423829}
   m_SourcePrefab: {fileID: 100100000, guid: 0394e84a365952245bf0e3f1f4e8fa6f, type: 3}
+--- !u!1 &4306325605657867834 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5057042665173765735, guid: 0394e84a365952245bf0e3f1f4e8fa6f, type: 3}
+  m_PrefabInstance: {fileID: 9073941604414961757}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2430777068024423829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4306325605657867834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa05c2d1ab707d41abdabe416ba0d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemColetavelAudio
+  somColeta: {fileID: 8300000, guid: ab297b593498a6e47ba84de770477cbe, type: 3}
 --- !u!4 &7566233746434472838 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1508059710426055643, guid: 0394e84a365952245bf0e3f1f4e8fa6f, type: 3}
