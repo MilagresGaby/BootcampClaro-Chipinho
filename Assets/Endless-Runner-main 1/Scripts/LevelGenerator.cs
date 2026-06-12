@@ -4,38 +4,38 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
-    public GameObject[] listaDeTiles; // Array com suas variações de obstáculos
-    public GameObject StartTile;      // O tile inicial sem obstáculos
+    public GameObject[] listaDeTiles; 
+    public GameObject StartTile;      
 
-    // CORRIGIDO: Agora o gerador começa a criar o asfalto 20 metros atrás do Player (Z: 0)
-    private float nextSpawnZ = -20f; 
+    // 🔥 TRAVADO EM ZERO: Para nascer exatamente embaixo do Player no Z:0
+    private float nextSpawnZ = 0f; 
     private float tileLength = 50f; 
 
-    // Lista para guardar os blocos que estão ativos na cena e podermos destruí-los depois
     private List<GameObject> activeTiles = new List<GameObject>();
-    private int maxTilesOnScreen = 5; // Quantidade máxima de blocos permitidos na tela por vez
+    private int maxTilesOnScreen = 5; 
 
     private void Start()
     {
-        // CORRIGIDO: Removida a linha errada. 
-        // Agora criamos os 3 primeiros blocos seguros usando o nextSpawnZ recuado
-        SpawnTile(StartTile); // Bloco 1: nasce em Z: -20
-        SpawnTile(StartTile); // Bloco 2: nasce em Z: 30
-        SpawnTile(StartTile); // Bloco 3: nasce em Z: 80
+        // Cria os 3 primeiros blocos começando do zero absoluto embaixo do pé dela!
+        SpawnTile(StartTile); // Bloco 1: Z = 0
+        SpawnTile(StartTile); // Bloco 2: Z = 50
+        SpawnTile(StartTile); // Bloco 3: Z = 100
     }
-
     private void Update()
     {
-        // Pega a velocidade do jogador para mover o gerador junto com ele
         Movement playerMovement = FindAnyObjectByType<Movement>();
-        float speed = (playerMovement != null) ? playerMovement.currentSpeed : 4f;
 
+        if (playerMovement == null || !playerMovement.enabled)
+        {
+            return; 
+        }
+
+        float speed = playerMovement.currentSpeed;
         gameObject.transform.position += new Vector3(0, 0, speed * Time.deltaTime);
 
-        // Verifica se é hora de criar um bloco novo
-        if (transform.position.z >= nextSpawnZ - (tileLength * 3))
+        // Ajuste de segurança para checar a distância do próximo spawn
+        if (transform.position.z >= nextSpawnZ - 100f)
         {
-            // Garante que você colocou algum tile na lista antes de sortear
             if (listaDeTiles.Length > 0)
             {
                 int indiceAleatorio = Random.Range(0, listaDeTiles.Length);
@@ -43,7 +43,6 @@ public class LevelGenerator : MonoBehaviour
             }
             else
             {
-                // Caso a lista esteja vazia por esquecimento no Unity, gera o inicial para não quebrar o jogo
                 SpawnTile(StartTile);
             }
         }
@@ -51,15 +50,30 @@ public class LevelGenerator : MonoBehaviour
 
     private void SpawnTile(GameObject tilePrefab)
     {
-        // Instancia o bloco e guarda a referência dele na variável 'go'
+        // 1. Instancia o bloco na posição atual do nextSpawnZ
         GameObject go = Instantiate(tilePrefab, new Vector3(0, 0, nextSpawnZ), Quaternion.identity);
-        
-        // Adiciona o bloco recém-criado na nossa lista de controle
         activeTiles.Add(go);
         
-        nextSpawnZ += tileLength;
+        // 2. VALOR PADRÃO DE SEGURANÇA (Caso o bloco não tenha o objeto "Rua")
+        float comprimentoDesseTile = 50f; 
 
-        // SISTEMA DE LIMPEZA: Se passar do limite permitido na tela, destrói o mais antigo
+        // 3. PROCURA A RUA DINAMICAMENTE
+        // Ele vai vasculhar os filhos do bloco procurando o objeto com o nome exato "Rua"
+        Transform objetoRua = ProcurarFilhoPorNome(go.transform, "Rua");
+
+        if (objetoRua != null)
+        {
+            MeshRenderer meshRenderer = objetoRua.GetComponent<MeshRenderer>();
+            if (meshRenderer != null)
+            {
+                // 🔥 A MÁGICA: Pega o tamanho real do modelo 3D no eixo Z!
+                comprimentoDesseTile = meshRenderer.bounds.size.z;
+            }
+        }
+
+        // 4. Soma o tamanho real medido para o próximo bloco nascer no lugar perfeito
+        nextSpawnZ += comprimentoDesseTile;
+
         if (activeTiles.Count > maxTilesOnScreen)
         {
             DeleteOldestTile();
@@ -68,9 +82,20 @@ public class LevelGenerator : MonoBehaviour
 
     private void DeleteOldestTile()
     {
-        // Remove o primeiro item da lista (o mais antigo de todos)
         Destroy(activeTiles[0]);
-        // Remove a referência dele da lista para o próximo da fila assumir o posto
         activeTiles.RemoveAt(0);
+    }
+
+    // Função auxiliar para encontrar a "Rua" mesmo se ela estiver escondida dentro de outros grupos
+    private Transform ProcurarFilhoPorNome(Transform pai, string nomeProcurado)
+    {
+        if (pai.name == nomeProcurado) return pai;
+
+        for (int i = 0; i < pai.childCount; i++)
+        {
+            Transform resultado = ProcurarFilhoPorNome(pai.GetChild(i), nomeProcurado);
+            if (resultado != null) return resultado;
+        }
+        return null;
     }
 }

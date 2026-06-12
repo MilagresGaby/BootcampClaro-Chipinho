@@ -3,7 +3,7 @@
 public class Movement : MonoBehaviour
 {
     [Header("Configurações de Pista")]
-    public float laneDistance = 6f; 
+    public float laneDistance = 4f; // Reduzido de 6 para 4 para combinar com a largura visual da sua rua!
     public float laneSpeed = 15f;   
     private int desiredLane = 1;    
 
@@ -21,10 +21,16 @@ public class Movement : MonoBehaviour
     private CharacterController controller;
     private Animator anim;
 
+    // 🔥 VARIÁVEL DA VITÓRIA: Guarda a posição X real onde o jogo começou!
+    private float centroOriginalDaRua;
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>(); 
+
+        // Salva exatamente o X em que a Aya foi colocada no editor (ex: 101.4)
+        centroOriginalDaRua = transform.position.x;
     }
 
     private void Update()
@@ -59,12 +65,11 @@ public class Movement : MonoBehaviour
             if (anim != null) anim.SetTrigger("Jump"); 
         }
 
-        // DESLIZAR / CORTE DE PULO (CORRIGIDO: REMOVIDO O ISGROUNDED!)
+        // DESLIZAR / CORTE DE PULO
         if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) || SwipeControls.Instance.SwipeDown)
         {
             if (anim != null) anim.SetTrigger("Crouch"); 
 
-            // Se o jogador estiver no meio de um pulo, joga ele direto para o chão rápido (Dinamismo!)
             if (!isGrounded)
             {
                 velocity.y = -jumpForce; 
@@ -74,12 +79,13 @@ public class Movement : MonoBehaviour
         // GRAVIDADE
         velocity.y += gravity * Time.deltaTime;
 
-        // CÁLCULO FINAL DE MOVIMENTO
+        // CÁLCULO FINAL DE MOVIMENTO (CORRIGIDO!)
         Vector3 targetPosition = transform.position;
 
-        if (desiredLane == 0) targetPosition.x = -laneDistance;
-        else if (desiredLane == 1) targetPosition.x = 0;
-        else if (desiredLane == 2) targetPosition.x = laneDistance;
+        // Agora a matemática usa o ponto onde a pista realmente foi criada no mapa!
+        if (desiredLane == 0) targetPosition.x = centroOriginalDaRua - laneDistance;
+        else if (desiredLane == 1) targetPosition.x = centroOriginalDaRua;
+        else if (desiredLane == 2) targetPosition.x = centroOriginalDaRua + laneDistance;
 
         Vector3 moveVector = Vector3.forward * currentSpeed * Time.deltaTime;
         Vector3 screenPos = Vector3.Lerp(transform.position, targetPosition, laneSpeed * Time.deltaTime);
