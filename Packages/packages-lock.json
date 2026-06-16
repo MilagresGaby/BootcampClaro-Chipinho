@@ -1,6 +1,7 @@
 {
   "dependencies": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "com.unity.2d.common": {
       "version": "13.0.1",
       "depth": 1,
@@ -18,12 +19,15 @@
     },
 =======
 >>>>>>> c083370f2621a4d01e28f94278c2ed70dd042189
+=======
+>>>>>>> c083370f2621a4d01e28f94278c2ed70dd042189
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
       "source": "builtin",
       "dependencies": {}
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
     "com.unity.2d.spriteshape": {
       "version": "14.0.1",
@@ -36,6 +40,8 @@
       },
       "url": "https://packages.unity.com"
     },
+=======
+>>>>>>> c083370f2621a4d01e28f94278c2ed70dd042189
 =======
 >>>>>>> c083370f2621a4d01e28f94278c2ed70dd042189
     "com.unity.ai.navigation": {
