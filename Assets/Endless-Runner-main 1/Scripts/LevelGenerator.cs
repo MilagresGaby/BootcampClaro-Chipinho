@@ -10,7 +10,7 @@ public class LevelGenerator : MonoBehaviour
     // 🔥 TRAVADO EM ZERO: Para nascer exatamente embaixo do Player no Z:0
     private float nextSpawnZ = 0f; 
     private List<GameObject> activeTiles = new List<GameObject>();
-    private int maxTilesOnScreen = 8; 
+    private int maxTilesOnScreen = 35; 
 
     private void Start()
     {
@@ -42,7 +42,7 @@ public class LevelGenerator : MonoBehaviour
     gameObject.transform.position += new Vector3(0, 0, speed * Time.deltaTime);
 
     // Mantemos a distância de segurança em 120f para dar tempo do bloco nascer
-    if (transform.position.z >= nextSpawnZ - 120f)
+    if (transform.position.z >= nextSpawnZ - 350f)
     {
         if (listaDeTiles.Length > 0)
         {
