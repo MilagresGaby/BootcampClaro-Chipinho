@@ -10,7 +10,7 @@ public class LevelGenerator : MonoBehaviour
     // 🔥 TRAVADO EM ZERO: Para nascer exatamente embaixo do Player no Z:0
     private float nextSpawnZ = 0f; 
     private List<GameObject> activeTiles = new List<GameObject>();
-    private int maxTilesOnScreen = 6; 
+    private int maxTilesOnScreen = 8; 
 
     private void Start()
     {
@@ -21,33 +21,40 @@ public class LevelGenerator : MonoBehaviour
     }
 
     private void Update()
+{
+    Movement playerMovement = FindAnyObjectByType<Movement>();
+    GerenciadorColisao colisao = FindAnyObjectByType<GerenciadorColisao>();
+
+    if (playerMovement == null || !playerMovement.enabled)
     {
-        Movement playerMovement = FindAnyObjectByType<Movement>();
+        return; 
+    }
 
-        if (playerMovement == null || !playerMovement.enabled)
+    // 🛡️ TRAVA DO TRANCO: Se ela bateu e está se recuperando, 
+    // paramos o gerador completamente até ela voltar a correr, evitando o teletransporte!
+    if (colisao != null && colisao.EstaEmRecuperacao)
+    {
+        return; 
+    }
+
+    // SINCRONIZAÇÃO TOTAL: Só roda se ela estiver correndo normalmente
+    float speed = playerMovement.currentSpeed;
+    gameObject.transform.position += new Vector3(0, 0, speed * Time.deltaTime);
+
+    // Mantemos a distância de segurança em 120f para dar tempo do bloco nascer
+    if (transform.position.z >= nextSpawnZ - 120f)
+    {
+        if (listaDeTiles.Length > 0)
         {
-            return; 
+            int indiceAleatorio = Random.Range(0, listaDeTiles.Length);
+            SpawnTile(listaDeTiles[indiceAleatorio]);
         }
-
-        // 🔥 SINCRONIZAÇÃO TOTAL: O gerador volta a usar Time.deltaTime puro,
-        // andando exatamente na mesma velocidade e ritmo que a Aya corre!
-        float speed = playerMovement.currentSpeed;
-        gameObject.transform.position += new Vector3(0, 0, speed * Time.deltaTime);
-
-        // Mantemos a distância de segurança em 120f para dar tempo do bloco nascer
-        if (transform.position.z >= nextSpawnZ - 120f)
+        else
         {
-            if (listaDeTiles.Length > 0)
-            {
-                int indiceAleatorio = Random.Range(0, listaDeTiles.Length);
-                SpawnTile(listaDeTiles[indiceAleatorio]);
-            }
-            else
-            {
-                SpawnTile(StartTile);
-            }
+            SpawnTile(StartTile);
         }
     }
+}
 
     private void SpawnTile(GameObject tilePrefab)
     {

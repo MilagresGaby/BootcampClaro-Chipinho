@@ -65,38 +65,33 @@ public class GerenciadorColisao : MonoBehaviour
         }
     }
 
-    private void ExecutarDano(GameObject objetoColidido)
+   private void ExecutarDano(GameObject objetoColidido)
+{
+    vidasAtuais--;
+    Debug.LogWarning("💥 Bateu! Vidas Restantes: " + vidasAtuais);
+
+    // 🛡️ SEGURANÇA MÁXIMA: Só destrói o objeto específico que causou o dano (o Box Collider)
+    // Isso garante que o chão/tile principal nunca seja deletado por acidente aqui!
+    if (objetoColidido.CompareTag("Obstaculo"))
     {
-        vidasAtuais--;
-        Debug.LogWarning("💥 Bateu! Vidas Restantes: " + vidasAtuais);
-
-        // REGRA DE OURO: Se o objeto que ela colidiu tiver um Pai (o bloco da plataforma), 
-        // destrói o pai para sumir com tudo. Se não tiver, destrói o obstáculo comum.
-        if (objetoColidido.transform.parent != null)
-        {
-            Destroy(objetoColidido.transform.parent.gameObject);
-        }
-        else
-        {
-            Destroy(objetoColidido);
-        }
-
-        if (vidasAtuais <= 0)
-        {
-            Debug.LogError("💀 Fim de Jogo!");
-            StartCoroutine(RotinaMorteSuave());
-        }
-        else
-        {
-            if (anim != null) 
-            {
-                anim.ResetTrigger("Jump");
-                anim.SetTrigger("Hit"); 
-            }
-            StartCoroutine(EfeitoDanoEPunicaoVelocidade());
-        }
+        Destroy(objetoColidido);
     }
 
+    if (vidasAtuais <= 0)
+    {
+        Debug.LogError("💀 Fim de Jogo!");
+        StartCoroutine(RotinaMorteSuave());
+    }
+    else
+    {
+        if (anim != null) 
+        {
+            anim.ResetTrigger("Jump");
+            anim.SetTrigger("Hit"); 
+        }
+        StartCoroutine(EfeitoDanoEPunicaoVelocidade());
+    }
+}
     public void TomarDanoExterno(GameObject objeto)
     {
         if (isInvincible || vidasAtuais <= 0) return;
