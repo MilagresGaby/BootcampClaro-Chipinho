@@ -1418,12 +1418,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelGenerator
   listaDeTiles:
-  - {fileID: 6855549768175084563, guid: 0117e81ef5f3f364bbef68d762e814b8, type: 3}
-  - {fileID: 6855549768175084563, guid: cc88c02a5df2a034395eb717ccb27a67, type: 3}
-  - {fileID: 6855549768175084563, guid: d08ba1b5a23920c4a8b93058fee47b64, type: 3}
-  - {fileID: 6855549768175084563, guid: 33444f493c9cc224b92ac2a2d9b7fc1c, type: 3}
-  - {fileID: 6855549768175084563, guid: b903d2dabcaa42e48ac81f8d46fc50ef, type: 3}
-  StartTile: {fileID: 7138919144234931480, guid: 3c7d123d760a3694ab4f242cc78680ad, type: 3}
+  - {fileID: 6855549768175084563, guid: 2836b01430d38fb429c4d8bfbdfe5ce9, type: 3}
+  - {fileID: 6855549768175084563, guid: b2f212ff2dfd6f0448edd910802a9d2e, type: 3}
+  - {fileID: 6855549768175084563, guid: c53e2d4c806cd9d4386f9df036cf3c5b, type: 3}
+  - {fileID: 6855549768175084563, guid: 9bda28db5b4fdf940a99edb33a8c4410, type: 3}
+  - {fileID: 6855549768175084563, guid: 4f211282327ef50418141830202fb084, type: 3}
+  StartTile: {fileID: 7138919144234931480, guid: b1a4a2a0280e0f043969a83b871d7e1d, type: 3}
 --- !u!1 &1397768889
 GameObject:
   m_ObjectHideFlags: 0
@@ -2323,7 +2323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0720e7090a7738498441029aa2cceb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collision
-  vidasMaximas: 3
+  vidasMaximas: 6
 --- !u!114 &2101788050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2381,7 +2381,7 @@ CharacterController:
   m_StepOffset: 0.7
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.01
-  m_Center: {x: 0, y: 3, z: 0}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!95 &2101788054
 Animator:
   serializedVersion: 7
