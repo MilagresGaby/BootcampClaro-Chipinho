@@ -102,7 +102,11 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+<<<<<<< HEAD:Assets/Cenario02/Ceu/Epic_BlueSunset Equirect.mat
     - _Rotation: 223
+=======
+    - _Rotation: -5.4284315
+>>>>>>> c083370f2621a4d01e28f94278c2ed70dd042189:Assets/Cenario/Ceu/Epic_BlueSunset Equirect.mat
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1

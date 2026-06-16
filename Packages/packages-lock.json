@@ -1,5 +1,6 @@
 {
   "dependencies": {
+<<<<<<< HEAD
     "com.unity.2d.common": {
       "version": "13.0.1",
       "depth": 1,
@@ -15,12 +16,15 @@
       },
       "url": "https://packages.unity.com"
     },
+=======
+>>>>>>> c083370f2621a4d01e28f94278c2ed70dd042189
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
       "source": "builtin",
       "dependencies": {}
     },
+<<<<<<< HEAD
     "com.unity.2d.spriteshape": {
       "version": "14.0.1",
       "depth": 0,
@@ -32,6 +36,8 @@
       },
       "url": "https://packages.unity.com"
     },
+=======
+>>>>>>> c083370f2621a4d01e28f94278c2ed70dd042189
     "com.unity.ai.navigation": {
       "version": "2.0.12",
       "depth": 0,
@@ -52,7 +58,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.cinemachine": {
-      "version": "3.1.6",
+      "version": "3.1.7",
       "depth": 0,
       "source": "registry",
       "dependencies": {
