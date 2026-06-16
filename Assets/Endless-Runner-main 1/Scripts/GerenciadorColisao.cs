@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GerenciadorColisao : MonoBehaviour
 {
@@ -140,7 +141,7 @@ public class GerenciadorColisao : MonoBehaviour
         {
             anim.ResetTrigger("Jump");
             anim.ResetTrigger("Hit");
-            anim.Play("Dead"); // Força a animação de morte a tocar
+            anim.Play("Dead"); 
             anim.SetTrigger("Dead");
         }
 
@@ -157,6 +158,8 @@ public class GerenciadorColisao : MonoBehaviour
             yield return null;
         }
 
-        if (controller != null) controller.enabled = false; // Liberta a física na morte
+        if (controller != null) controller.enabled = false; //
+ 
+        SceneManager.LoadScene("TelaDerrota");
     }
-}
+    }

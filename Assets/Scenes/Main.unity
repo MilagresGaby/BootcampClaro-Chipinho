@@ -1605,6 +1605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ba56ec3ff5cd0643aea334c18578828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  painelDerrotaUI: {fileID: 0}
   textoPontos: {fileID: 646959841}
   textoCasasConectadas: {fileID: 624962065}
   barraEnergiaUI: {fileID: 1983986420}
@@ -1613,6 +1614,8 @@ MonoBehaviour:
   metaDeCasas: 15
   energiaAtual: 0
   energiaMaxima: 100
+  torresConectadas: 0
+  casasSolaresConectadas: 0
   dialogoFinalDaFase:
   - nome: Chipinho
     avatar: {fileID: 21300000, guid: 4e2a019a8e48ac04c96f3a2269726f99, type: 3}
@@ -2323,7 +2326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0720e7090a7738498441029aa2cceb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collision
-  vidasMaximas: 6
+  vidasMaximas: 1
 --- !u!114 &2101788050
 MonoBehaviour:
   m_ObjectHideFlags: 0

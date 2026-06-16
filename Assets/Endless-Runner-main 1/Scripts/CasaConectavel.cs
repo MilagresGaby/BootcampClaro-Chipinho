@@ -1,100 +1,104 @@
 using UnityEngine;
-using System.Collections; // <-- ADICIONE ESTA LINHA AQUI NO TOPO!
+using System.Collections; //
 
-
-    // O resto do seu código continua exatamente igual...
 public class CasaConectavel : MonoBehaviour
 {
-    private bool jaConectou = false;
-    private MeshRenderer casaRenderer;
+    // 🎛️ Cria um menu de opções diretamente no Inspector da Unity
+    public enum TipoConstrucao { Normal, TorreFase1, CasaSolarFase2 }
+
+    [Header("Configuração do Tipo")]
+    public TipoConstrucao tipoDestaConstrucao = TipoConstrucao.Normal;
+
+    [Header("Cores de Brilho Especiais")]
+    public Color corTorre = Color.cyan;       // Azul elétrico para a Torre
+    public Color corSolar = Color.yellow;     // Amarelo para a Casa Solar
+    public Color corNormal = Color.green;     // Verde padrão original
+
+    private bool jaConectou = false; //
+    private MeshRenderer casaRenderer; //
 
     private void Start()
     {
-        casaRenderer = GetComponent<MeshRenderer>();
+        casaRenderer = GetComponent<MeshRenderer>(); //
     }
 
-// Substitua ou atualize esta função no seu CasaConectavel.cs
-public void ConectarPelaLinha()
-{
-    if (!jaConectou)
+    public void ConectarPelaLinha() //
     {
-        if (GameManager.Instance != null && GameManager.Instance.TentarConectarCasa())
+        if (!jaConectou) //
         {
-            jaConectou = true;
-            Debug.Log("Casa conectada com sucesso!");
-
-            if (casaRenderer != null)
+            if (GameManager.Instance != null && GameManager.Instance.TentarConectarCasa(tipoDestaConstrucao)) //
             {
-                casaRenderer.material.color = Color.green;
-            }
+                jaConectou = true; //
+                Debug.Log($"Construção do tipo {tipoDestaConstrucao} conectada com sucesso!");
 
-            // ATIVA A ANIMAÇÃO DE PULSO VISUAL
-            StartCoroutine(AnimarPulsoCasa());
-
-          // Procure essa parte dentro do seu CasaConectavel.cs e mude para isto:
-EfeitoRaioConexao raioEfeito = FindAnyObjectByType<EfeitoRaioConexao>();
-if (raioEfeito != null)
-{
-    // Acha o objeto do jogador na cena para pegar a posição real dele
-    GameObject jogador = GameObject.FindGameObjectWithTag("Player");
-    if (jogador != null)
-    {
-        // Dispara o raio saindo do corpo do Player até a casa!
-        raioEfeito.DispararRaio(jogador.transform.position, transform.position);
-    }
-}
-    }
-    }
-}
-
-private IEnumerator AnimarPulsoCasa()
-{
-    Vector3 escalaOriginal = transform.localScale;
-    // Define o tamanho máximo do "pulo" visual da casa (1.3x maior)
-    Vector3 escalaMaxima = escalaOriginal * 1.3f; 
-
-    float tempo = 0f;
-    float duracao = 0.15f; // Rápido para dar sensação de impacto
-
-    // Fase 1: Crescer
-    while (tempo < duracao)
-    {
-        tempo += Time.deltaTime;
-        transform.localScale = Vector3.Lerp(escalaOriginal, escalaMaxima, tempo / duracao);
-        yield return null;
-    }
-
-    tempo = 0f;
-    // Fase 2: Voltar ao tamanho normal
-    while (tempo < duracao)
-    {
-        tempo += Time.deltaTime;
-        transform.localScale = Vector3.Lerp(escalaMaxima, escalaOriginal, tempo / duracao);
-        yield return null;
-    }
-
-    transform.localScale = escalaOriginal; // Garante o tamanho exato no fim
-}
-
-    private void OnTriggerEnter(Collider other)
-    {
-        // Se for o jogador que passou e a casa ainda não foi conectada
-        if (other.CompareTag("Player") && !jaConectou)
-        {
-            // Pergunta ao GameManager se temos energia para conectar
-            if (GameManager.Instance != null && GameManager.Instance.TentarConectarCasa())
-            {
-                jaConectou = true;
-                Debug.Log("Casa conectada com sucesso!");
-
-                // EFEITO VISUAL TEMPORÁRIO: Muda a cor da casa para Verde para indicar sucesso
+                // 🎨 SISTEMA UNIFICADO DE BRILHO: Muda a cor baseado na sua escolha do Inspector
                 if (casaRenderer != null)
                 {
-                    casaRenderer.material.color = Color.green;
+                    switch (tipoDestaConstrucao)
+                    {
+                        case TipoConstrucao.TorreFase1:
+                            casaRenderer.material.color = corTorre;
+                            break;
+                        case TipoConstrucao.CasaSolarFase2:
+                            casaRenderer.material.color = corSolar;
+                            break;
+                        default:
+                            casaRenderer.material.color = corNormal; //
+                            break;
+                    }
                 }
 
-                // Aqui os artistas do seu grupo poderão ativar as animações/partículas de Wi-Fi depois
+                // ATIVA A ANIMAÇÃO DE PULSO VISUAL
+                StartCoroutine(AnimarPulsoCasa()); //
+
+                // Dispara o efeito do raio de conexão
+                EfeitoRaioConexao raioEfeito = FindAnyObjectByType<EfeitoRaioConexao>(); //
+                if (raioEfeito != null) //
+                {
+                    GameObject jogador = GameObject.FindGameObjectWithTag("Player"); //
+                    if (jogador != null) //
+                    {
+                        raioEfeito.DispararRaio(jogador.transform.position, transform.position); //
+                    }
                 }
             }
         }
     }
+
+    private IEnumerator AnimarPulsoCasa() //
+    {
+        Vector3 escalaOriginal = transform.localScale; //
+        Vector3 escalaMaxima = escalaOriginal * 1.3f; //
+
+        float tempo = 0f; //
+        float duracao = 0.15f; //
+
+        // Fase 1: Crescer
+        while (tempo < duracao) //
+        {
+            tempo += Time.deltaTime; //
+            transform.localScale = Vector3.Lerp(escalaOriginal, escalaMaxima, tempo / duracao); //
+            yield return null; //
+        }
+
+        tempo = 0f; //
+        // Fase 2: Voltar ao tamanho normal
+        while (tempo < duracao) //
+        {
+            tempo += Time.deltaTime; //
+            transform.localScale = Vector3.Lerp(escalaMaxima, escalaOriginal, tempo / duracao); //
+            yield return null; //
+        }
+
+        transform.localScale = escalaOriginal; //
+    }
+
+    private void OnTriggerEnter(Collider other) //
+    {
+        // Mantém a colisão direta do jogador funcionando em harmonia se ele encostar fisicamente
+        if (other.CompareTag("Player") && !jaConectou) //
+        {
+            ConectarPelaLinha(); 
+        }
+    }
+}
