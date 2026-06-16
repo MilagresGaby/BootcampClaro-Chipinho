@@ -97,24 +97,25 @@ public class GerenciadorDialogo : MonoBehaviour
 
     private void FinalizarDialogo()
     {
-        painelDialogo.SetActive(false); 
+        painelDialogo.SetActive(false); //
 
-        // SE FOR O DIÁLOGO DA VITÓRIA, TELETRANSPORTA PARA A PRÓXIMA FASE!
+        // =======================================================
+        // 🏆 SE FOR O DIÁLOGO DA VITÓRIA, CARREGA A TELA DE VITÓRIA!
+        // =======================================================
         if (ehODialogoFinal)
         {
-            int proximaCena = SceneManager.GetActiveScene().buildIndex + 1;
-            SceneManager.LoadScene(proximaCena);
+            SceneManager.LoadScene("TelaVitoria");
             return; 
         }
 
-        if (playerMovement != null)
+        if (playerMovement != null) //
         {
-            playerMovement.velocity = Vector3.zero; 
-            playerMovement.enabled = true; // Reativa o script de corrida
+            playerMovement.velocity = Vector3.zero; //
+            playerMovement.enabled = true; //
             
-            if (playerAnim != null)
+            if (playerAnim != null) //
             {
-                playerAnim.SetTrigger("StartRun");
+                playerAnim.SetTrigger("StartRun"); //
             }
         }
     }

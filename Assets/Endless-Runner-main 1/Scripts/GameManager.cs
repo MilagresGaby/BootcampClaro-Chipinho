@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
             if (barraEnergiaUI != null) barraEnergiaUI.value = energiaAtual / energiaMaxima; //
             AtualizarInterface(); //
 
-            // 🔥 CHECAGEM DA VITÓRIA CRUCIAL
+          // 🔥 CHECAGEM DA VITÓRIA CRUCIAL
             if (casasConectadas >= metaDeCasas && !faseConcluida) //
             {
                 faseConcluida = true; //
@@ -114,17 +114,19 @@ public class GameManager : MonoBehaviour
                 GerenciadorDialogo gd = FindAnyObjectByType<GerenciadorDialogo>(); //
                 if (gd != null) //
                 {
+                    // Apenas inicia o diálogo e deixa o script de Diálogo cuidar do resto!
                     gd.IniciarDialogoFinal(dialogoFinalDaFase); //
                 }
                 else
                 {
                     Debug.LogError("Não encontrei o GerenciadorDialogo na cena para rodar as falas finais!"); //
+                    // Segurança caso te esqueças do Gerenciador na cena:
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("TelaVitoria");
                 }
             }
-
-            return true; //
+            return true; 
         }
-        return false; //
+        return false; 
     }
 
     public void AdicionarModulo()

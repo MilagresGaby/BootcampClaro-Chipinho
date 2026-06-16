@@ -1611,9 +1611,9 @@ MonoBehaviour:
   barraEnergiaUI: {fileID: 1983986420}
   pontosAtuais: 0
   casasConectadas: 0
-  metaDeCasas: 15
-  energiaAtual: 0
-  energiaMaxima: 100
+  metaDeCasas: 7
+  energiaAtual: 100000
+  energiaMaxima: 10000
   torresConectadas: 0
   casasSolaresConectadas: 0
   dialogoFinalDaFase:
