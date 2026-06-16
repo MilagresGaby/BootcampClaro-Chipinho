@@ -1,7 +1,5 @@
 {
   "dependencies": {
-<<<<<<< HEAD
-<<<<<<< HEAD
     "com.unity.2d.common": {
       "version": "13.0.1",
       "depth": 1,
@@ -17,18 +15,12 @@
       },
       "url": "https://packages.unity.com"
     },
-=======
->>>>>>> c083370f2621a4d01e28f94278c2ed70dd042189
-=======
->>>>>>> c083370f2621a4d01e28f94278c2ed70dd042189
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
       "source": "builtin",
       "dependencies": {}
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
     "com.unity.2d.spriteshape": {
       "version": "14.0.1",
       "depth": 0,
@@ -40,22 +32,9 @@
       },
       "url": "https://packages.unity.com"
     },
-=======
->>>>>>> c083370f2621a4d01e28f94278c2ed70dd042189
-=======
->>>>>>> c083370f2621a4d01e28f94278c2ed70dd042189
-    "com.unity.ai.navigation": {
-      "version": "2.0.12",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.ai": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
     "com.unity.burst": {
       "version": "1.8.29",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.mathematics": "1.2.1",
@@ -64,12 +43,25 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.cinemachine": {
-      "version": "3.1.7",
+      "version": "3.1.6",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.splines": "2.0.0",
         "com.unity.modules.imgui": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.cloud.gltfast": {
+      "version": "6.19.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.burst": "1.8.29",
+        "com.unity.collections": "2.6.6",
+        "com.unity.mathematics": "1.3.3",
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.unitywebrequest": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
@@ -82,7 +74,7 @@
     },
     "com.unity.collections": {
       "version": "6.4.0",
-      "depth": 2,
+      "depth": 1,
       "source": "builtin",
       "dependencies": {
         "com.unity.burst": "1.8.23",
@@ -91,6 +83,13 @@
         "com.unity.test-framework": "1.4.6",
         "com.unity.test-framework.performance": "3.0.3"
       }
+    },
+    "com.unity.device-simulator.devices": {
+      "version": "1.0.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
     },
     "com.unity.ext.nunit": {
       "version": "2.0.5",
@@ -142,7 +141,7 @@
     },
     "com.unity.nuget.mono-cecil": {
       "version": "1.11.6",
-      "depth": 3,
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -236,7 +235,7 @@
     },
     "com.unity.test-framework.performance": {
       "version": "3.4.0",
-      "depth": 3,
+      "depth": 2,
       "source": "registry",
       "dependencies": {
         "com.unity.test-framework": "1.1.33",
@@ -274,6 +273,13 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "com.whinarn.unitymeshsimplifier": {
+      "version": "https://github.com/Whinarn/UnityMeshSimplifier.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "53fdb3122645bcd3ad2c258235200dff3dfbaa9b"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
