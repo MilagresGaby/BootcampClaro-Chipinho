@@ -1418,11 +1418,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelGenerator
   listaDeTiles:
+  - {fileID: 6855549768175084563, guid: 0117e81ef5f3f364bbef68d762e814b8, type: 3}
+  - {fileID: 6855549768175084563, guid: cc88c02a5df2a034395eb717ccb27a67, type: 3}
   - {fileID: 6855549768175084563, guid: d08ba1b5a23920c4a8b93058fee47b64, type: 3}
-  - {fileID: 6855549768175084563, guid: d08ba1b5a23920c4a8b93058fee47b64, type: 3}
-  - {fileID: 6855549768175084563, guid: d08ba1b5a23920c4a8b93058fee47b64, type: 3}
-  - {fileID: 6855549768175084563, guid: d08ba1b5a23920c4a8b93058fee47b64, type: 3}
-  - {fileID: 6855549768175084563, guid: d08ba1b5a23920c4a8b93058fee47b64, type: 3}
+  - {fileID: 6855549768175084563, guid: 33444f493c9cc224b92ac2a2d9b7fc1c, type: 3}
+  - {fileID: 6855549768175084563, guid: b903d2dabcaa42e48ac81f8d46fc50ef, type: 3}
   StartTile: {fileID: 7138919144234931480, guid: 3c7d123d760a3694ab4f242cc78680ad, type: 3}
 --- !u!1 &1397768889
 GameObject:

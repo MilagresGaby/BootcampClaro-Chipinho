@@ -2010,7 +2010,8 @@ PrefabInstance:
       value: Obstaculo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5947824462593700795, guid: d4f40363aa44ea649ac792f348b8c36a, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7328177842769079452, guid: d4f40363aa44ea649ac792f348b8c36a, type: 3}
