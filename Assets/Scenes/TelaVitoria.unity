@@ -600,7 +600,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1634166079}
-        m_TargetAssemblyTypeName: MenuPrincipal, Assembly-CSharp
+        m_TargetAssemblyTypeName: FaseDois, Assembly-CSharp
         m_MethodName: Jogar
         m_Mode: 1
         m_Arguments:
@@ -1455,7 +1455,7 @@ GameObject:
   - component: {fileID: 1634166078}
   - component: {fileID: 1634166079}
   m_Layer: 5
-  m_Name: jogarNovamente
+  m_Name: ProximaFase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1489,9 +1489,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1634166077}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7aeb0ef09a205324284139b5b1b83fc3, type: 3}
+  m_Script: {fileID: 11500000, guid: 352b8679b6e434d4f9765c242165c73f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MenuPrincipal
+  m_EditorClassIdentifier: Assembly-CSharp::FaseDois
 --- !u!1 &1674816507
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TelaVitoria.unity
     guid: ec9c4621c5d35dd48a06086b68bb8a8b
+  - enabled: 1
+    path: Assets/Scenes/Fase 2.unity
+    guid: fe1ea8ef145b1c242aa9e390f99efe26
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
