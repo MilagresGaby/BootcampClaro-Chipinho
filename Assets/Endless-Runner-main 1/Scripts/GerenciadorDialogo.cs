@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement; 
 
 [System.Serializable]
 public class LinhaDialogo
@@ -25,44 +26,47 @@ public class GerenciadorDialogo : MonoBehaviour
     public List<LinhaDialogo> dialogosDaFase;
     private int indiceAtual = 0;
 
+    // A VARIÁVEL INTERRUPTOR: Falsa por padrão, vira verdadeira apenas na vitória!
+    private bool ehODialogoFinal = false; 
+
     [Header("Referências do Jogador")]
     private Movement playerMovement; 
     private Animator playerAnim;     
 
     private void Start()
+{
+    // 🔥 FALTAVA ESSA LINHA DAQUI PARA ENCONTRAR O PLAYER NA CENA!
+    playerMovement = FindAnyObjectByType<Movement>();
+
+    if (playerMovement != null)
     {
-        playerMovement = FindAnyObjectByType<Movement>();
-
-        if (playerMovement != null)
+        // Encontra o componente Animator na Aya
+        playerAnim = playerMovement.GetComponent<Animator>();
+        if (playerAnim == null)
         {
-            playerAnim = playerMovement.GetComponent<Animator>();
-            if (playerAnim == null)
-            {
-                playerAnim = playerMovement.GetComponentInChildren<Animator>();
-            }
+            playerAnim = playerMovement.GetComponentInChildren<Animator>();
         }
 
-        if (playerMovement != null)
+        // Agora sim configuramos o estado inicial do diálogo com segurança
+        playerMovement.enabled = false; 
+        
+        if (playerAnim != null)
         {
-            playerMovement.enabled = false; // Desativa o script de correr
-            
-            // 🔥 TRUQUE DO PAUSE: Como não temos Idle, congelamos a animação atual em velocidade 0!
-            if (playerAnim != null)
-            {
-                playerAnim.speed = 0f; 
-            }
-        }
-
-        if (dialogosDaFase.Count > 0)
-        {
-            painelDialogo.SetActive(true);
-            ExibirProximaFala();
-        }
-        else
-        {
-            FinalizarDialogo();
+            playerAnim.speed = 1f;
         }
     }
+
+    // Inicializa o Canvas se houver texto
+    if (dialogosDaFase.Count > 0)
+    {
+        painelDialogo.SetActive(true);
+        ExibirProximaFala();
+    }
+    else
+    {
+        FinalizarDialogo();
+    }
+}
 
     private void Update()
     {
@@ -95,14 +99,22 @@ public class GerenciadorDialogo : MonoBehaviour
     {
         painelDialogo.SetActive(false); 
 
+        // SE FOR O DIÁLOGO DA VITÓRIA, TELETRANSPORTA PARA A PRÓXIMA FASE!
+        if (ehODialogoFinal)
+        {
+            int proximaCena = SceneManager.GetActiveScene().buildIndex + 1;
+            SceneManager.LoadScene(proximaCena);
+            return; 
+        }
+
         if (playerMovement != null)
         {
-            playerMovement.enabled = true; // Reativa a corrida
+            playerMovement.velocity = Vector3.zero; 
+            playerMovement.enabled = true; // Reativa o script de corrida
             
-            // 🔥 TRUQUE DO PLAY: O diálogo acabou, despausamos a animação voltando a velocidade para 1!
             if (playerAnim != null)
             {
-                playerAnim.speed = 1f; 
+                playerAnim.SetTrigger("StartRun");
             }
         }
     }
@@ -111,15 +123,21 @@ public class GerenciadorDialogo : MonoBehaviour
     {
         indiceAtual = 0;
         dialogosDaFase = falasFinais;
+        ehODialogoFinal = true; // INTERRUPTOR LIGADO!
 
         Movement player = FindAnyObjectByType<Movement>();
         if (player != null) 
         {
-            player.enabled = false;
+            player.enabled = false; // Para o avanço da corrida
             
-            // Pausa a animação na tela de vitória também
-            Animator animFinal = player.GetComponentInChildren<Animator>();
-            if (animFinal != null) animFinal.speed = 0f;
+            playerAnim = player.GetComponent<Animator>();
+            if (playerAnim == null) playerAnim = player.GetComponentInChildren<Animator>();
+
+            if (playerAnim != null)
+            {
+                playerAnim.speed = 1f;
+                playerAnim.SetTrigger("Win");
+            }
         }
 
         painelDialogo.SetActive(true);

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic; // 🔥 IMPORTANTE: Adicionado para permitir o uso de Lists!
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -19,6 +20,10 @@ public class GameManager : MonoBehaviour
     public float energiaAtual = 0f;
     public float energiaMaxima = 100f;
 
+    [Header("Diálogo de Vitória (Final da Fase)")]
+    public List<LinhaDialogo> dialogoFinalDaFase; // 🔥 O campo vai aparecer aqui no Inspector!
+    private bool faseConcluida = false; 
+
     private Transform playerTransform;
     private float pontosPorDistanciaacumulados = 0f;
 
@@ -30,6 +35,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Application.targetFrameRate = 60;
         Movement player = FindAnyObjectByType<Movement>();
         if (player != null) playerTransform = player.transform;
 
@@ -37,24 +43,23 @@ public class GameManager : MonoBehaviour
     }
 
     private void Update()
-{
-    if (playerTransform != null && playerTransform.GetComponent<Movement>().enabled)
     {
-        pontosPorDistanciaacumulados += playerTransform.GetComponent<Movement>().currentSpeed * Time.deltaTime * 0.5f;
-        
-        // ADICIONE ESSA LINHA ABAIXO: Perde 2f de energia por segundo correndo
-        AdicionarEnergia(-2f * Time.deltaTime); 
+        if (playerTransform != null && playerTransform.GetComponent<Movement>().enabled)
+        {
+            pontosPorDistanciaacumulados += playerTransform.GetComponent<Movement>().currentSpeed * Time.deltaTime * 0.5f;
+            
+            // Perde 2f de energia por segundo correndo
+            AdicionarEnergia(-2f * Time.deltaTime); 
 
-        AtualizarInterface();
+            AtualizarInterface();
+        }
     }
-}
 
     public void AdicionarEnergia(float quantidade)
-    {
-        // CORRIGIDO: Alterado de 'quantity' para 'quantidade'
-        energiaAtual = Mathf.Clamp(energiaAtual + quantidade, 0f, energiaMaxima);
-        if (barraEnergiaUI != null) barraEnergiaUI.value = energiaAtual / energiaMaxima;
-    }
+{
+    energiaAtual = Mathf.Clamp(energiaAtual + quantidade, 0f, energiaMaxima);
+    if (barraEnergiaUI != null) barraEnergiaUI.value = energiaAtual / energiaMaxima;
+}
 
     public bool TentarConectarCasa()
     {
@@ -66,6 +71,23 @@ public class GameManager : MonoBehaviour
 
             if (barraEnergiaUI != null) barraEnergiaUI.value = energiaAtual / energiaMaxima;
             AtualizarInterface();
+
+            // 🔥 CHECAGEM DA VITÓRIA CRUCIAL
+            if (casasConectadas >= metaDeCasas && !faseConcluida)
+            {
+                faseConcluida = true;
+                
+                GerenciadorDialogo gd = FindAnyObjectByType<GerenciadorDialogo>();
+                if (gd != null)
+                {
+                    gd.IniciarDialogoFinal(dialogoFinalDaFase);
+                }
+                else
+                {
+                    Debug.LogError("Não encontrei o GerenciadorDialogo na cena para rodar as falas finais!");
+                }
+            }
+
             return true; 
         }
         return false; 
@@ -82,7 +104,6 @@ public class GameManager : MonoBehaviour
         return Mathf.RoundToInt(pontosAtuais + pontosPorDistanciaacumulados);
     }
 
-    // CORRIGIDO: Nome alterado para bater exatamente com as chamadas do código
     private void AtualizarInterface()
     {
         if (textoPontos != null) 

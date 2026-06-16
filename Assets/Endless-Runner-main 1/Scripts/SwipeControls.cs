@@ -23,12 +23,23 @@ public class SwipeControls : MonoBehaviour
 
     private void Update()
     {
+        // Reseta todos os comandos no início de cada frame
         tap = swipeLeft = swipeRight = swipeUp = swipeDown = false;
-        UpdateMobile();
-    }
 
-    private void UpdateMobile()
-    {
+        // 📱 SUPORTE PARA COMPUTADOR (MOUSEDOWN / MOUSEUP)
+        if (Input.GetMouseButtonDown(0))
+        {
+            tap = true;
+            isDraging = true;
+            startTouch = Input.mousePosition;
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            isDraging = false;
+            ResetSwipe();
+        }
+
+        // 📱 SUPORTE PARA CELULAR (TOUCH)
         if (Input.touches.Length > 0)
         {
             if (Input.touches[0].phase == TouchPhase.Began)
@@ -44,27 +55,29 @@ public class SwipeControls : MonoBehaviour
             }
         }
 
-        // Calcular a distância do arrasto
+        // CALCULAR A DISTÂNCIA DO ARRASTO CORRETAMENTE
         swipeDelta = Vector2.zero;
         if (isDraging)
         {
-            if (Input.touches.Length < 0)
+            if (Input.touches.Length > 0)
                 swipeDelta = Input.touches[0].position - startTouch;
             else if (Input.GetMouseButton(0))
                 swipeDelta = (Vector2)Input.mousePosition - startTouch;
         }
 
-        // Cruzou a zona morta?
-        if (swipeDelta.magnitude > 100)
+        // CRUZOU A ZONA MORTA? (Verifica se o arrasto foi longo o suficiente)
+        if (swipeDelta.magnitude > 80) // Reduzido de 100 para 80 para ficar mais responsivo!
         {
             float x = swipeDelta.x;
             float y = swipeDelta.y;
+            
+            // Verifica se o movimento foi mais Horizontal do que Vertical
             if (Mathf.Abs(x) > Mathf.Abs(y))
             {
                 if (x < 0) swipeLeft = true;
                 else swipeRight = true;
             }
-            else
+            else // Se foi mais Vertical do que Horizontal
             {
                 if (y < 0) swipeDown = true;
                 else swipeUp = true;

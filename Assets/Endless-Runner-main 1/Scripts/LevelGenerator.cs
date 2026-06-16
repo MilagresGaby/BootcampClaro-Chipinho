@@ -9,10 +9,8 @@ public class LevelGenerator : MonoBehaviour
 
     // 🔥 TRAVADO EM ZERO: Para nascer exatamente embaixo do Player no Z:0
     private float nextSpawnZ = 0f; 
-    private float tileLength = 50f; 
-
     private List<GameObject> activeTiles = new List<GameObject>();
-    private int maxTilesOnScreen = 5; 
+    private int maxTilesOnScreen = 6; 
 
     private void Start()
     {
@@ -21,6 +19,7 @@ public class LevelGenerator : MonoBehaviour
         SpawnTile(StartTile); // Bloco 2: Z = 50
         SpawnTile(StartTile); // Bloco 3: Z = 100
     }
+
     private void Update()
     {
         Movement playerMovement = FindAnyObjectByType<Movement>();
@@ -30,11 +29,13 @@ public class LevelGenerator : MonoBehaviour
             return; 
         }
 
+        // 🔥 SINCRONIZAÇÃO TOTAL: O gerador volta a usar Time.deltaTime puro,
+        // andando exatamente na mesma velocidade e ritmo que a Aya corre!
         float speed = playerMovement.currentSpeed;
         gameObject.transform.position += new Vector3(0, 0, speed * Time.deltaTime);
 
-        // Ajuste de segurança para checar a distância do próximo spawn
-        if (transform.position.z >= nextSpawnZ - 100f)
+        // Mantemos a distância de segurança em 120f para dar tempo do bloco nascer
+        if (transform.position.z >= nextSpawnZ - 120f)
         {
             if (listaDeTiles.Length > 0)
             {
