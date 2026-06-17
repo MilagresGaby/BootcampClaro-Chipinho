@@ -455,6 +455,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5547894472503459647}
   - {fileID: 7569176705800111437}
   - {fileID: 5924729153889411653}
   - {fileID: 7668194131568531320}
@@ -466,7 +467,6 @@ Transform:
   - {fileID: 6190161169998360398}
   - {fileID: 8623007499977078366}
   - {fileID: 386941660512890481}
-  - {fileID: 2483112796766030190}
   - {fileID: 6158533217553062464}
   - {fileID: 4984685299223692377}
   - {fileID: 8558682127539195408}
@@ -600,6 +600,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afc1aa6c193d2d64987a31e8e59fbaea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CasaConectavel
+  tipoDestaConstrucao: 0
+  corTorre: {r: 0, g: 1, b: 1, a: 1}
+  corSolar: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  corNormal: {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &7440724417665755719
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,6 +1207,80 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6022033762277641845, guid: b61ee73729bb7cc478eb6845e4bfcb85, type: 3}
   m_PrefabInstance: {fileID: 2686411369202688763}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3556343677428929403
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5744122294833211417}
+    m_Modifications:
+    - target: {fileID: 7019559768389475591, guid: c5cf115b10539384fa6338c8e93938c9, type: 3}
+      propertyPath: tipoItem
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019559768389475591, guid: c5cf115b10539384fa6338c8e93938c9, type: 3}
+      propertyPath: somColeta
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a71d8e8ea428e0409d3df636b9f0192, type: 3}
+    - target: {fileID: 7019559768389475591, guid: c5cf115b10539384fa6338c8e93938c9, type: 3}
+      propertyPath: quantidadeEnergia
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570191448048154366, guid: c5cf115b10539384fa6338c8e93938c9, type: 3}
+      propertyPath: m_Name
+      value: Sinal 5G
+      objectReference: {fileID: 0}
+    - target: {fileID: 9053571275966934084, guid: c5cf115b10539384fa6338c8e93938c9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9053571275966934084, guid: c5cf115b10539384fa6338c8e93938c9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 9053571275966934084, guid: c5cf115b10539384fa6338c8e93938c9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 45.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 9053571275966934084, guid: c5cf115b10539384fa6338c8e93938c9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9053571275966934084, guid: c5cf115b10539384fa6338c8e93938c9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9053571275966934084, guid: c5cf115b10539384fa6338c8e93938c9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9053571275966934084, guid: c5cf115b10539384fa6338c8e93938c9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9053571275966934084, guid: c5cf115b10539384fa6338c8e93938c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9053571275966934084, guid: c5cf115b10539384fa6338c8e93938c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9053571275966934084, guid: c5cf115b10539384fa6338c8e93938c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c5cf115b10539384fa6338c8e93938c9, type: 3}
+--- !u!4 &5547894472503459647 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9053571275966934084, guid: c5cf115b10539384fa6338c8e93938c9, type: 3}
+  m_PrefabInstance: {fileID: 3556343677428929403}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4631827149780791982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1609,84 +1687,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afc1aa6c193d2d64987a31e8e59fbaea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CasaConectavel
+  tipoDestaConstrucao: 0
+  corTorre: {r: 0, g: 1, b: 1, a: 1}
+  corSolar: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  corNormal: {r: 0, g: 1, b: 0, a: 1}
 --- !u!4 &4984685299223692377 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2774220344278030320, guid: 9e6e3ed6207ea7e4494f125065a7613d, type: 3}
   m_PrefabInstance: {fileID: 7182443618769933225}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &7493903140693045713
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 5744122294833211417}
-    m_Modifications:
-    - target: {fileID: 5010950426091468991, guid: 019eecc484ab6d741aef13f87d02e27d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 17.675
-      objectReference: {fileID: 0}
-    - target: {fileID: 5010950426091468991, guid: 019eecc484ab6d741aef13f87d02e27d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 8.4348
-      objectReference: {fileID: 0}
-    - target: {fileID: 5010950426091468991, guid: 019eecc484ab6d741aef13f87d02e27d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 44.241764
-      objectReference: {fileID: 0}
-    - target: {fileID: 5010950426091468991, guid: 019eecc484ab6d741aef13f87d02e27d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5010950426091468991, guid: 019eecc484ab6d741aef13f87d02e27d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5010950426091468991, guid: 019eecc484ab6d741aef13f87d02e27d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 23.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5010950426091468991, guid: 019eecc484ab6d741aef13f87d02e27d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5010950426091468991, guid: 019eecc484ab6d741aef13f87d02e27d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5010950426091468991, guid: 019eecc484ab6d741aef13f87d02e27d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5010950426091468991, guid: 019eecc484ab6d741aef13f87d02e27d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5010950426091468991, guid: 019eecc484ab6d741aef13f87d02e27d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5010950426091468991, guid: 019eecc484ab6d741aef13f87d02e27d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5010950426091468991, guid: 019eecc484ab6d741aef13f87d02e27d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5916431462908055074, guid: 019eecc484ab6d741aef13f87d02e27d, type: 3}
-      propertyPath: m_Name
-      value: Linha_Trigger
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 019eecc484ab6d741aef13f87d02e27d, type: 3}
---- !u!4 &2483112796766030190 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5010950426091468991, guid: 019eecc484ab6d741aef13f87d02e27d, type: 3}
-  m_PrefabInstance: {fileID: 7493903140693045713}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7917429927830220947
 PrefabInstance:
@@ -2035,6 +2043,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afc1aa6c193d2d64987a31e8e59fbaea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CasaConectavel
+  tipoDestaConstrucao: 0
+  corTorre: {r: 0, g: 1, b: 1, a: 1}
+  corSolar: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  corNormal: {r: 0, g: 1, b: 0, a: 1}
 --- !u!1001 &8385445011826426810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2201,8 +2213,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: -0.3, y: 0.5, z: 0}
+  m_Size: {x: 0.8, y: 1, z: 0.8}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!4 &8782552718865663269 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 904854057185171067, guid: 3a5df9f18409e7c439c513e6d67a378c, type: 3}

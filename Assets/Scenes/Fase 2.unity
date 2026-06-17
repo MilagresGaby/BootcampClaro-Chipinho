@@ -1424,6 +1424,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994630131}
   m_CullTransparentMesh: 1
+--- !u!1001 &1028519693
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1559331595626310104, guid: d030dc3d293eec545958683a08c2ed81, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.498624
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559331595626310104, guid: d030dc3d293eec545958683a08c2ed81, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.000000029133162
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559331595626310104, guid: d030dc3d293eec545958683a08c2ed81, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.252019
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559331595626310104, guid: d030dc3d293eec545958683a08c2ed81, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559331595626310104, guid: d030dc3d293eec545958683a08c2ed81, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559331595626310104, guid: d030dc3d293eec545958683a08c2ed81, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559331595626310104, guid: d030dc3d293eec545958683a08c2ed81, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559331595626310104, guid: d030dc3d293eec545958683a08c2ed81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559331595626310104, guid: d030dc3d293eec545958683a08c2ed81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559331595626310104, guid: d030dc3d293eec545958683a08c2ed81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795554698719527038, guid: d030dc3d293eec545958683a08c2ed81, type: 3}
+      propertyPath: m_Name
+      value: moeda low poly 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d030dc3d293eec545958683a08c2ed81, type: 3}
 --- !u!1 &1366496882
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,19 +1719,20 @@ MonoBehaviour:
   barraEnergiaUI: {fileID: 1983986420}
   pontosAtuais: 0
   casasConectadas: 0
-  metaDeCasas: 500
+  metaDeCasas: 60
   energiaAtual: 0
-  energiaMaxima: 10000
+  energiaMaxima: 150
   torresConectadas: 0
   casasSolaresConectadas: 0
   dialogoFinalDaFase:
   - nome: Chipinho
     avatar: {fileID: 21300000, guid: 4e2a019a8e48ac04c96f3a2269726f99, type: 3}
-    texto: Conseguimos, Aya! Conectamos todas as casas desse setor!
+    texto: "Conseguimos, Aya! Conectamos todas as casas e recuperamos at\xE9 os sinais
+      mais dif\xEDceis!"
   - nome: Aya
     avatar: {fileID: 21300000, guid: 4ff40796963eeb84b8561ba616542f59, type: 3}
-    texto: "Perfeito! Agora o sinal est\xE1 est\xE1vel. Vamos avan\xE7ar para o pr\xF3ximo
-      bairro!"
+    texto: "Sensacional! Todo mundo vai conseguir curtir o festival junto agora.
+      N\xF3s conseguimos, parceiro!"
 --- !u!1 &1499920982
 GameObject:
   m_ObjectHideFlags: 0
@@ -2350,20 +2408,18 @@ MonoBehaviour:
   campoTexto: {fileID: 994630133}
   campoAvatar: {fileID: 492470847}
   dialogosDaFase:
-  - nome: Aya
-    avatar: {fileID: 21300000, guid: 4ff40796963eeb84b8561ba616542f59, type: 3}
-    texto: "Nossa, Chipinho... Olha o tamanho do blackout na rede! As aulas na Escola
-      Comunit\xE1ria come\xE7am daqui a pouco!"
   - nome: Chipinho
     avatar: {fileID: 21300000, guid: 4e2a019a8e48ac04c96f3a2269726f99, type: 3}
-    texto: "Bip-bop! An\xE1lise de sinal conclu\xEDda, Aya! V\xE1rios m\xF3dulos
-      de conex\xE3o ca\xEDram pelas ruas durante o pico de energia. Se voc\xEA correr
-      e coletar 3 deles, eu consigo retransmitir o sinal direto para o roteador da
-      escola!"
+    texto: "Alerta, Aya! Chegamos ao \xFAltimo setor, mas os sensores est\xE3o detectando
+      interfer\xEAncias estranhas na rede"
   - nome: Aya
     avatar: {fileID: 21300000, guid: 4ff40796963eeb84b8561ba616542f59, type: 3}
-    texto: "Perfeito! Ajusta os meus comandos a\xED, pula na minha mochila e vamos
-      nessa. Tecnologia que conecta sonhos, lembra? Partiu!"
+    texto: "\xC9 verdade, Chipinho... Olha o tamanho daquelas falhas escuras flutuando
+      ali na frente! O que s\xE3o aquilo?"
+  - nome: Aya
+    avatar: {fileID: 21300000, guid: 4ff40796963eeb84b8561ba616542f59, type: 3}
+    texto: "S\xE3o os sinais do Blackout! Eles est\xE3o bloqueando a conex\xE3o principal.
+      Se n\xE3o coletarmos todos, o festival vai ficar no escuro!"
 --- !u!1 &1967463023
 GameObject:
   m_ObjectHideFlags: 0
@@ -2639,7 +2695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0720e7090a7738498441029aa2cceb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collision
-  vidasMaximas: 6
+  vidasMaximas: 8
 --- !u!114 &2101788050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2668,8 +2724,8 @@ MonoBehaviour:
   laneDistance: 6
   laneSpeed: 10
   currentSpeed: 20
-  maxSpeed: 20
-  speedIncrease: 0.1
+  maxSpeed: 27
+  speedIncrease: 0.2
   jumpForce: 20
   gravity: -32
   velocity: {x: 0, y: 0, z: 0}
@@ -2880,6 +2936,63 @@ RectTransform:
   m_AnchoredPosition: {x: -300, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
+--- !u!1001 &6714297084956735754
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6234417385357947736, guid: 99dbc07521294ab459f836bbd33a3e03, type: 3}
+      propertyPath: m_Name
+      value: Sinal 5G black
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759561334049204706, guid: 99dbc07521294ab459f836bbd33a3e03, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.581726
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759561334049204706, guid: 99dbc07521294ab459f836bbd33a3e03, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.000000022634403
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759561334049204706, guid: 99dbc07521294ab459f836bbd33a3e03, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.9182377
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759561334049204706, guid: 99dbc07521294ab459f836bbd33a3e03, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759561334049204706, guid: 99dbc07521294ab459f836bbd33a3e03, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759561334049204706, guid: 99dbc07521294ab459f836bbd33a3e03, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759561334049204706, guid: 99dbc07521294ab459f836bbd33a3e03, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759561334049204706, guid: 99dbc07521294ab459f836bbd33a3e03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759561334049204706, guid: 99dbc07521294ab459f836bbd33a3e03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759561334049204706, guid: 99dbc07521294ab459f836bbd33a3e03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 99dbc07521294ab459f836bbd33a3e03, type: 3}
 --- !u!1001 &8291792878610900756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2948,3 +3061,5 @@ SceneRoots:
   - {fileID: 1456635172}
   - {fileID: 1911545389}
   - {fileID: 8291792878610900756}
+  - {fileID: 1028519693}
+  - {fileID: 6714297084956735754}

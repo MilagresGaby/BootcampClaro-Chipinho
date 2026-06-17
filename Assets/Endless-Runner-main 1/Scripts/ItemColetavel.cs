@@ -10,6 +10,12 @@ public class ItemColetavel : MonoBehaviour
     [Header("Efeito Visual")]
     public float velocidadeRotacao = 100f;
 
+    [Header("Configuração de Áudio")]
+    [Tooltip("Arraste o arquivo de som (.mp3 ou .wav) aqui no Inspetor")]
+    [SerializeField] private AudioClip somColeta;
+
+    private bool jaFoiColetado = false; // Trava de segurança para o som rodar uma única vez
+
     private void Update()
     {
         // Faz a moeda vermelha girar no próprio eixo para dar efeito de jogo
@@ -18,9 +24,17 @@ public class ItemColetavel : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Verifica se quem bateu na moeda foi o Player
-        if (other.CompareTag("Player"))
+        // Só executa se for o Player E se a moeda ainda não tiver sido pega (evita eco/duplicação)
+        if (other.CompareTag("Player") && !jaFoiColetado)
         {
+            jaFoiColetado = true; // Ativa a trava imediatamente
+
+            // Se houver um som configurado, ele toca uma única vez na posição da moeda
+            if (somColeta != null)
+            {
+                AudioSource.PlayClipAtPoint(somColeta, transform.position);
+            }
+
             if (GameManager.Instance != null)
             {
                 if (tipoItem == TipoDoItem.SinalEnergia)
