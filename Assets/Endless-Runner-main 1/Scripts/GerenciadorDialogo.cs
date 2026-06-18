@@ -16,6 +16,7 @@ public class LinhaDialogo
 
 public class GerenciadorDialogo : MonoBehaviour
 {
+    string nomeCenaAtual = SceneManager.GetActiveScene().name;
     [Header("Componentes do Canvas")]
     public GameObject painelDialogo;
     public TextMeshProUGUI campoNome;
@@ -104,10 +105,19 @@ public class GerenciadorDialogo : MonoBehaviour
         // =======================================================
         if (ehODialogoFinal)
         {
-            SceneManager.LoadScene("TelaVitoria");
-            return; 
-        }
+            string nomeCenaAtual = SceneManager.GetActiveScene().name;
 
+            if (nomeCenaAtual == "Main")
+            {
+                SceneManager.LoadScene("TelaVitoria");
+            }
+            else if (nomeCenaAtual == "Fase 2")
+            {
+                SceneManager.LoadScene("Creditos");
+            }
+
+            return;
+        } 
         if (playerMovement != null) //
         {
             playerMovement.velocity = Vector3.zero; //
