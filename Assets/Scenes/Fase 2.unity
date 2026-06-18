@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b685f2c28a3c42e4cb111bf6e0ab3613, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseManager
-  painelPause: {fileID: 0}
+  painelPause: {fileID: 190887905}
 --- !u!1 &319015430
 GameObject:
   m_ObjectHideFlags: 0
