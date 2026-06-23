@@ -173,7 +173,8 @@ Polimento: Refinamento de iluminação, efeitos visuais (VFX de coleta de moedas
 •
 Entrega: Geração da build final (Executável/APK) com margem de 2 dias antes do prazo oficial para mitigar riscos.
 
-
+# Link do jogo no itch.io
+https://gabr-iel17.itch.io/conecta-favela-bootcamp-claro-games
 
 
 🚀 Como Executar o Projeto
